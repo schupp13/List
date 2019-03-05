@@ -37,7 +37,7 @@ function attachRemoveButtons(li){
 
 function refresh(){
   for(let i = 0; i < lis.length; i++){
-    lis[i].removeChild(lis[i].button);
+    //lis[i].removeChild('button');
       if(i === 0){
         attachDownButtons(lis[i]);
         attachRemoveButtons(lis[i]);
