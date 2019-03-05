@@ -18,12 +18,14 @@ function attachUpButtons(li){
   up.textContent = 'Up'
   li.appendChild(up);
 }
+
 function attachDownButtons(li){
   let down = document.createElement('button');
   down.className = 'down'
   down.textContent = 'Down'
   li.appendChild(down);
 }
+
 function attachRemoveButtons(li){
   let remove = document.createElement('button');
   remove.className = 'remove'
@@ -31,10 +33,11 @@ function attachRemoveButtons(li){
   li.appendChild(remove);
 }
 
-refresh();
+
 
 function refresh(){
   for(let i = 0; i < lis.length; i++){
+    lis[i].removeChild(lis[i].button);
       if(i === 0){
         attachDownButtons(lis[i]);
         attachRemoveButtons(lis[i]);
@@ -50,8 +53,6 @@ function refresh(){
 }
 
 }
-
-
 
 
 toggleList.addEventListener('click', () =>{
@@ -111,8 +112,6 @@ addItemButton.addEventListener('click' ,() =>{
   li.textContent = addItemInput.value;
   ul.appendChild(li);
   refresh();
-
-
-
   addItemInput.value = '';
 });
+refresh();
