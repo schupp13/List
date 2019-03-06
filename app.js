@@ -7,9 +7,9 @@ const listUl = listDiv.querySelector('ul');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemInput');
 const lis = listUl.children;
+const lisbuttons = lis.children;
 const firstListItem = listUl.firstElementChild;
 const lastListItem = listUl.lastElementChild;
-
 
 
 function attachUpButtons(li){
@@ -37,10 +37,11 @@ function attachRemoveButtons(li){
 }
 
 function refresh(){
+
+  // trying to delete the buttons... can't seem to get it to work.
   for(let i = 0; i < lis.length; i++ ){
-    for(let i =0; i < lis[i].children.length; i++){
-      lis[i].children.removeChild(lis[i].children);
-    }
+    console.log(lis[i].children);
+           lis.removeChild(lis[i].children);
 
   }
 
@@ -123,3 +124,4 @@ addItemButton.addEventListener('click' ,() =>{
   addItemInput.value = '';
 });
 refresh();
+firstListItem.children
