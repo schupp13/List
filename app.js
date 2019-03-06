@@ -17,9 +17,11 @@ function attachUpButtons(li){
   up.className = 'up'
   up.textContent = 'Up'
   li.appendChild(up);
+
 }
 
 function attachDownButtons(li){
+
   let down = document.createElement('button');
   down.className = 'down'
   down.textContent = 'Down'
@@ -31,13 +33,19 @@ function attachRemoveButtons(li){
   remove.className = 'remove'
   remove.textContent = 'Remove'
   li.appendChild(remove);
+
 }
 
-
-
 function refresh(){
+  for(let i = 0; i < lis.length; i++ ){
+    for(let i =0; i < lis[i].children.length; i++){
+      lis[i].children.removeChild(lis[i].children);
+    }
+
+  }
+
   for(let i = 0; i < lis.length; i++){
-    //lis[i].removeChild('button');
+
       if(i === 0){
         attachDownButtons(lis[i]);
         attachRemoveButtons(lis[i]);
