@@ -10,7 +10,7 @@ const lis = listUl.children;
 const lisbuttons = lis.children;
 const firstListItem = listUl.firstElementChild;
 const lastListItem = listUl.lastElementChild;
-
+const clearList = document.querySelector('.clearList');
 
 function attachUpButtons(li){
   let up = document.createElement('button');
@@ -127,4 +127,11 @@ addItemButton.addEventListener('click' ,() =>{
   refresh();
   addItemInput.value = '';
 });
+
+// neeeds alot of
+clearList.addEventListener('click', () => {
+  while(listUl.firstElementChild){
+    listUl.removeChild(listUl.firstElementChild);
+  }
+})
 refresh();
