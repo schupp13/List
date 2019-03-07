@@ -50,10 +50,13 @@ function refresh(){
   clearButtons();
 
   for(let i = 0; i < lis.length; i++){
-
       if(i === 0){
-        attachDownButtons(lis[i]);
-        attachRemoveButtons(lis[i]);
+        if(lis.length > 1){
+          attachDownButtons(lis[i]);
+          attachRemoveButtons(lis[i]);
+        }else if (lis.length === 1) {
+          attachRemoveButtons(lis[i]);
+        }
       }
       else if (i === lis.length - 1) {
         attachUpButtons(lis[i]);
@@ -63,11 +66,7 @@ function refresh(){
         attachDownButtons(lis[i]);
         attachRemoveButtons(lis[i]);
       }
-
-
-}
-
-
+    }
 }
 
 
