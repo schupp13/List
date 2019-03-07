@@ -13,6 +13,7 @@ const lastListItem = listUl.lastElementChild;
 
 
 function attachUpButtons(li){
+
   let up = document.createElement('button');
   up.className = 'up'
   up.textContent = 'Up'
@@ -26,9 +27,12 @@ function attachDownButtons(li){
   down.className = 'down'
   down.textContent = 'Down'
   li.appendChild(down);
+
+
 }
 
 function attachRemoveButtons(li){
+
   let remove = document.createElement('button');
   remove.className = 'remove'
   remove.textContent = 'Remove'
@@ -36,14 +40,21 @@ function attachRemoveButtons(li){
 
 }
 
+function clearButtons(){
+  // trying to delete the buttons... can't seem to get it to work.
+
+  const li = document.querySelectorAll('.list > ul > li');
+  for(let i = 0; i < li.length; i++ ){
+    while(li[i].firstElementChild){
+      li[i].removeChild(li[i].firstElementChild);
+    }
+  }
+}
+
+
 function refresh(){
 
-  // trying to delete the buttons... can't seem to get it to work.
-  for(let i = 0; i < lis.length; i++ ){
-    console.log(lis[i].children);
-           lis.removeChild(lis[i].children);
-
-  }
+  clearButtons();
 
   for(let i = 0; i < lis.length; i++){
 
@@ -124,4 +135,3 @@ addItemButton.addEventListener('click' ,() =>{
   addItemInput.value = '';
 });
 refresh();
-firstListItem.children
