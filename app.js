@@ -34,8 +34,6 @@ function attachRemoveButtons(li){
 }
 
 function clearButtons(){
-  // trying to delete the buttons... can't seem to get it to work.
-
   const li = document.querySelectorAll('.list > ul > li');
   for(let i = 0; i < li.length; i++ ){
     while(li[i].firstElementChild){
@@ -122,7 +120,7 @@ listUl.addEventListener('click', (event) => {
 
 
 addItemButton.addEventListener('click' ,() =>{
-  let ul = document.getElementsByTagName('ul')[0];
+  let ul = document.querySelector('.list ul');
   let li = document.createElement('li');
   li.textContent = addItemInput.value;
   ul.appendChild(li);
