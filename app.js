@@ -33,6 +33,7 @@ function attachRemoveButtons(li){
   li.appendChild(remove);
 }
 
+// this function clears all the buttons that are children to the list items.
 function clearButtons(){
   const li = document.querySelectorAll('.list > ul > li');
   for(let i = 0; i < li.length; i++ ){
@@ -44,22 +45,22 @@ function clearButtons(){
 
 
 function refresh(){
-
+// calling the clear function to delete all old buttons before generating new ones
   clearButtons();
-
+ // for loop that builds the new buttons
   for(let i = 0; i < lis.length; i++){
-      if(i === 0){
-        if(lis.length > 1){
+      if(i === 0){ // the first list item will have two options depending on the length of the list.
+        if(lis.length > 1){// if the list is greate than one item long, it will have two buttons
           attachDownButtons(lis[i]);
           attachRemoveButtons(lis[i]);
-        }else if (lis.length === 1) {
+        }else if (lis.length === 1) {// if the list is is only one item long, it will only have the rmove button
           attachRemoveButtons(lis[i]);
         }
       }
-      else if (i === lis.length - 1) {
+      else if (i === lis.length - 1) {// last item in the list will only have two options up or remove
         attachUpButtons(lis[i]);
         attachRemoveButtons(lis[i]);
-      }else{
+      }else{// All middle items in the list will have all button options - up , down or remove
         attachUpButtons(lis[i]);
         attachDownButtons(lis[i]);
         attachRemoveButtons(lis[i]);
@@ -67,7 +68,7 @@ function refresh(){
     }
 }
 
-
+// toggleList is the button that hides or shows the list
 toggleList.addEventListener('click', () =>{
   if(listDiv.style.display == 'none'){
     toggleList.textContent = 'Hide List';
@@ -78,7 +79,7 @@ toggleList.addEventListener('click', () =>{
   }
 });
 
-
+// changing the name of the list
 descriptionButton.addEventListener('click', () => {
   if(descriptionInput.value !== ""){
     descriptionP.innerHTML =  descriptionInput.value + ':';
@@ -86,6 +87,7 @@ descriptionButton.addEventListener('click', () => {
   }
 });
 
+// this function detects if if the event.target is the remove, up or down button.
 listUl.addEventListener('click', (event) => {
   if(event.target.tagName == 'BUTTON'){
     if(event.target.className == 'remove'){
@@ -114,13 +116,7 @@ listUl.addEventListener('click', (event) => {
   }
 });
 
-// document.addEventListener('click', (event) => {
-//   console.log(event.target);
-// });
-
-
-
-
+//If the user types in a value it the list and press the add itme button this function will run and add a 'li' item to the 'ul'
 addItemButton.addEventListener('click' ,() =>{
   if(addItemInput.value !== ""){
     let ul = document.querySelector('.list ul');
@@ -132,7 +128,7 @@ addItemButton.addEventListener('click' ,() =>{
   }
 });
 
-// neeeds alot of
+// button that delets all items in the list
 clearList.addEventListener('click', () => {
   while(listUl.firstElementChild){
     listUl.removeChild(listUl.firstElementChild);
