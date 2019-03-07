@@ -80,8 +80,10 @@ toggleList.addEventListener('click', () =>{
 
 
 descriptionButton.addEventListener('click', () => {
-  descriptionP.innerHTML =  descriptionInput.value + ':';
-  descriptionInput.value = "";
+  if(descriptionInput.value !== ""){
+    descriptionP.innerHTML =  descriptionInput.value + ':';
+    descriptionInput.value = "";
+  }
 });
 
 listUl.addEventListener('click', (event) => {
@@ -120,12 +122,14 @@ listUl.addEventListener('click', (event) => {
 
 
 addItemButton.addEventListener('click' ,() =>{
-  let ul = document.querySelector('.list ul');
-  let li = document.createElement('li');
-  li.textContent = addItemInput.value;
-  ul.appendChild(li);
-  refresh();
-  addItemInput.value = '';
+  if(addItemInput.value !== ""){
+    let ul = document.querySelector('.list ul');
+    let li = document.createElement('li');
+    li.textContent = addItemInput.value;
+    ul.appendChild(li);
+    refresh();
+    addItemInput.value = '';
+  }
 });
 
 // neeeds alot of
