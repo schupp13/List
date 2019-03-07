@@ -13,31 +13,24 @@ const lastListItem = listUl.lastElementChild;
 
 
 function attachUpButtons(li){
-
   let up = document.createElement('button');
   up.className = 'up'
   up.textContent = 'Up'
   li.appendChild(up);
-
 }
 
 function attachDownButtons(li){
-
   let down = document.createElement('button');
   down.className = 'down'
   down.textContent = 'Down'
   li.appendChild(down);
-
-
 }
 
 function attachRemoveButtons(li){
-
   let remove = document.createElement('button');
   remove.className = 'remove'
   remove.textContent = 'Remove'
   li.appendChild(remove);
-
 }
 
 function clearButtons(){
@@ -70,7 +63,10 @@ function refresh(){
         attachDownButtons(lis[i]);
         attachRemoveButtons(lis[i]);
       }
+
+
 }
+
 
 }
 

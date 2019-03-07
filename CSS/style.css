@@ -78,4 +78,8 @@ li button:first-child {
 li button {
   font-size: .75em;
   padding: .5em .65em;
-}s
+}
+
+.list li:nth-child(odd){
+  background-color: lightgrey;
+}
