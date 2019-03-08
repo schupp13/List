@@ -32,6 +32,7 @@ function attachRemoveButtons(li){
   remove.textContent = 'Remove'
   li.appendChild(remove);
 }
+
 function attachGotItButtons(li){
   let gotIt = document.createElement('button');
   gotIt.className = 'gotIt'
@@ -106,6 +107,7 @@ listUl.addEventListener('click', (event) => {
     let ul = li.parentNode;
     ul.removeChild(li);
     }
+
     if(event.target.className == 'up'){
       let li = event.target.parentNode;
       let prevLi = li.previousElementSibling;
@@ -123,13 +125,16 @@ listUl.addEventListener('click', (event) => {
         ul.insertBefore(nextLi, li);
       }
     }
+
     if(event.target.className == 'gotIt'){
       let li = event.target.parentNode;
       let ul = li.parentNode;
       li.style.textDecoration = 'line-through';
+      // taking the item from the top of the list to the bottom of the list
       ul.removeChild(li);
       ul.appendChild(li);
     }
+
     refresh();
 }
 });
@@ -140,6 +145,7 @@ addItemButton.addEventListener('click' ,() =>{
     let ul = document.querySelector('.list ul');
     let li = document.createElement('li');
     li.textContent = addItemInput.value;
+    // attaching item to the front of the list
     ul.insertBefore(li, ul.firstElementChild);
     refresh();
     addItemInput.value = '';
