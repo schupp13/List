@@ -105,7 +105,7 @@ descriptionButton.addEventListener('click', () => {
   }
 });
 descriptionInput.addEventListener('keyup',function(e){
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && descriptionInput.value !== "") {
       descriptionP.innerHTML =  descriptionInput.value + ':';
       descriptionInput.value = "";
   }
@@ -160,7 +160,7 @@ listUl.addEventListener('click', (event) => {
 });
 
 addItemInput.addEventListener('keyup',function(e){
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && addItemInput.value !== '') {
       let ul = document.querySelector('.list ul');
       let li = document.createElement('li');
       li.textContent = addItemInput.value;
