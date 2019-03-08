@@ -116,5 +116,8 @@ li button {
   div {
     margin-top: 5px;
   }
+  .description button {
+    float: left;
+  }
 
 }
