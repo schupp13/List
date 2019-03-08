@@ -61,8 +61,8 @@ function refresh(){
           attachDownButtons(lis[i]);
           attachRemoveButtons(lis[i]);
         }else if (lis.length === 1) {// if the list is is only one item long, it will only have the rmove button
-          attachRemoveButtons(lis[i]);
           attachGotItButtons(lis[i]);
+          attachRemoveButtons(lis[i]);
 
         }
       }
@@ -125,7 +125,10 @@ listUl.addEventListener('click', (event) => {
     }
     if(event.target.className == 'gotIt'){
       let li = event.target.parentNode;
+      let ul = li.parentNode;
       li.style.textDecoration = 'line-through';
+      ul.removeChild(li);
+      ul.appendChild(li);
     }
     refresh();
 }
@@ -137,7 +140,7 @@ addItemButton.addEventListener('click' ,() =>{
     let ul = document.querySelector('.list ul');
     let li = document.createElement('li');
     li.textContent = addItemInput.value;
-    ul.appendChild(li);
+    ul.insertBefore(li, ul.firstElementChild);
     refresh();
     addItemInput.value = '';
   }
