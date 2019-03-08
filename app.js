@@ -32,6 +32,12 @@ function attachRemoveButtons(li){
   remove.textContent = 'Remove'
   li.appendChild(remove);
 }
+function attachGotItButtons(li){
+  let gotIt = document.createElement('button');
+  gotIt.className = 'gotIt'
+  gotIt.textContent = 'Got It!'
+  li.appendChild(gotIt);
+}
 
 // this function clears all the buttons that are children to the list items.
 function clearButtons(){
@@ -51,16 +57,21 @@ function refresh(){
   for(let i = 0; i < lis.length; i++){
       if(i === 0){ // the first list item will have two options depending on the length of the list.
         if(lis.length > 1){// if the list is greate than one item long, it will have two buttons
+          attachGotItButtons(lis[i]);
           attachDownButtons(lis[i]);
           attachRemoveButtons(lis[i]);
         }else if (lis.length === 1) {// if the list is is only one item long, it will only have the rmove button
           attachRemoveButtons(lis[i]);
+          attachGotItButtons(lis[i]);
+
         }
       }
       else if (i === lis.length - 1) {// last item in the list will only have two options up or remove
+        attachGotItButtons(lis[i]);
         attachUpButtons(lis[i]);
         attachRemoveButtons(lis[i]);
       }else{// All middle items in the list will have all button options - up , down or remove
+        attachGotItButtons(lis[i]);
         attachUpButtons(lis[i]);
         attachDownButtons(lis[i]);
         attachRemoveButtons(lis[i]);
@@ -112,8 +123,12 @@ listUl.addEventListener('click', (event) => {
         ul.insertBefore(nextLi, li);
       }
     }
+    if(event.target.className == 'gotIt'){
+      let li = event.target.parentNode;
+      li.style.textDecoration = 'line-through';
+    }
     refresh();
-  }
+}
 });
 
 //If the user types in a value it the list and press the add itme button this function will run and add a 'li' item to the 'ul'

@@ -80,7 +80,9 @@ li button {
   font-size: .75em;
   padding: .5em .65em;
 }
-
+::placeholder{
+  color: lightgrey;
+}
 .list li:nth-child(odd){
 
   background-color: lightgrey;
