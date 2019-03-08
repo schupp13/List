@@ -129,5 +129,9 @@ li button {
     width:100%;
     margin: auto;
   }
+  .list{
+    max-width: 100%;
+    width: 100%;
+  }
 
 }
