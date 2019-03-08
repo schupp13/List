@@ -103,6 +103,7 @@ li button {
     width:auto;
     font-size:125%;
     text-align: center;
+    max-width: 100%;
   }
   h1{
     font-size: auto;
