@@ -129,10 +129,17 @@ listUl.addEventListener('click', (event) => {
     if(event.target.className == 'gotIt'){
       let li = event.target.parentNode;
       let ul = li.parentNode;
-      li.style.textDecoration = 'line-through';
-      // taking the item from the top of the list to the bottom of the list
-      ul.removeChild(li);
-      ul.appendChild(li);
+      if(li.style.textDecoration == 'line-through'){
+        li.style.textDecoration = 'none';
+        ul.insertBefore(li, ul.firstElementChild);
+      }else{
+        li.style.textDecoration = 'line-through';
+        li.style.backgroundColor = 'lightblue';
+        // taking the item from the top of the list to the bottom of the list
+        ul.removeChild(li);
+        ul.appendChild(li);
+      }
+
     }
 
     refresh();
