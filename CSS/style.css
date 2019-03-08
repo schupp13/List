@@ -29,6 +29,10 @@ li {
   display: flex;
   align-items: center;
   font-family: fantasy;
+  max-width: 30%;
+  width:100%;
+  margin: auto;
+  text-overflow: ellipsis;
 }
 input,
 button {
