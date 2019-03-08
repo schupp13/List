@@ -15,28 +15,34 @@ const clearList = document.querySelector('.clearList');
 function attachUpButtons(li){
   let up = document.createElement('button');
   up.className = 'up'
-  up.textContent = 'Up'
+  const upArrow = '\&#9650';
+  up.innerHTML = upArrow;
+
   li.appendChild(up);
 }
 
 function attachDownButtons(li){
   let down = document.createElement('button');
   down.className = 'down'
-  down.textContent = 'Down'
+  const downArrow = '\&#9660';
+  down.innerHTML = downArrow;
   li.appendChild(down);
 }
 
 function attachRemoveButtons(li){
   let remove = document.createElement('button');
-  remove.className = 'remove'
-  remove.textContent = 'Remove'
+  remove.className = 'remove';
+  const removeX = '\&#10008';
+  remove.innerHTML = removeX;
   li.appendChild(remove);
 }
 
 function attachGotItButtons(li){
   let gotIt = document.createElement('button');
-  gotIt.className = 'gotIt'
-  gotIt.textContent = 'Got It!'
+  gotIt.className = 'gotIt';
+  const check = '\&#10004'
+
+  gotIt.innerHTML = check;
   li.appendChild(gotIt);
 }
 
