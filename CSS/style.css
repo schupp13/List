@@ -132,8 +132,9 @@ li button {
   margin: auto;
 }
 
-  li {
+li {
     max-width: 95%;
+    width: 100%;
     margin: auto;
 
 }
