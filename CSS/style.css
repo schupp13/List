@@ -92,9 +92,13 @@ li button {
 /* If the screen size is 600px wide or less, hide the element */
 @media only screen and (max-width: 600px) {
   body {
+
     width:auto;
     font-size:150%;
     text-align: center;
+  }
+  h1{
+    font-size: 80%
   }
   li buttons{
   padding:2px;
