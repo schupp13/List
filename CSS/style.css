@@ -96,7 +96,50 @@ li button {
 }
 
 /* If the screen size is 600px wide or less, hide the element */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+  body {
+    padding: 0px;
+    margin:0px;
+    width:auto;
+    font-size:125%;
+    text-align: center;
+    max-width: 100%;
+  }
+  h1{
+    font-size: auto;
+  }
+  h1 + p{
+    margin:0px;
+  }
+
+  li buttons{
+  padding:auto;
+  }
+  #toggleList {
+    margin: 0;
+    padding: 5px;
+  }
+  div {
+    margin-top: 5px;
+    max-width: 100%;
+  }
+  .description button {
+    float: left;
+  }
+
+.list {
+  max-width: 100%;
+  margin: auto;
+}
+
+li {
+    max-width: 95%;
+    width: 100%;
+    margin: auto;
+
+}
+/* If the screen size is 600px wide or less, hide the element */
+@media only screen and (max-width: 600px) and (orientation: landscape) {
   body {
     padding: 0px;
     margin:0px;
