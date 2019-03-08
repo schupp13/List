@@ -57,6 +57,7 @@ button {
   border-color: rgba(0, 0, 0, .1);
   cursor: pointer;
 }
+
 button + button {
   margin-left: .5em;
 }
@@ -103,4 +104,8 @@ li button {
   li buttons{
   padding:auto;
   }
+  #toggleList{
+    padding: 5px;
+  }
+
 }
