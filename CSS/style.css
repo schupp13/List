@@ -102,6 +102,10 @@ li button {
   h1{
     font-size: auto;
   }
+  h1 p{
+    margin:0px;
+  }
+
   li buttons{
   padding:auto;
   }
