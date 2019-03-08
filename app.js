@@ -104,6 +104,12 @@ descriptionButton.addEventListener('click', () => {
     descriptionInput.value = "";
   }
 });
+descriptionInput.addEventListener('keyup',function(e){
+    if (e.keyCode === 13) {
+      descriptionP.innerHTML =  descriptionInput.value + ':';
+      descriptionInput.value = "";
+  }
+});
 
 // this function detects if if the event.target is the remove, up or down button.
 listUl.addEventListener('click', (event) => {
@@ -151,6 +157,18 @@ listUl.addEventListener('click', (event) => {
 
     refresh();
 }
+});
+
+addItemInput.addEventListener('keyup',function(e){
+    if (e.keyCode === 13) {
+      let ul = document.querySelector('.list ul');
+      let li = document.createElement('li');
+      li.textContent = addItemInput.value;
+      // attaching item to the front of the list
+      ul.insertBefore(li, ul.firstElementChild);
+      refresh();
+      addItemInput.value = '';
+  }
 });
 
 //If the user types in a value it the list and press the add itme button this function will run and add a 'li' item to the 'ul'
