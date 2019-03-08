@@ -120,6 +120,7 @@ li button {
   }
   div {
     margin-top: 5px;
+    max-width: 100%;
   }
   .description button {
     float: left;
