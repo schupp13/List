@@ -94,6 +94,7 @@ li button {
   body {
     width:auto;
     font-size:150%;
+    text-align: center;
   }
   li buttons{
   padding:2px;
