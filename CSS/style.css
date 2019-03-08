@@ -104,7 +104,8 @@ li button {
   li buttons{
   padding:auto;
   }
-  #toggleList{
+  #toggleList {
+    margin: 0;
     padding: 5px;
   }
 
