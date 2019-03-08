@@ -74,7 +74,7 @@ li button:first-child {
   background: #52bab3;
 }
 .list li button:last-child {
-  background: #768da3;
+  background: red;
 }
 li button {
   font-size: .75em;
@@ -83,6 +83,7 @@ li button {
 ::placeholder{
   color: lightgrey;
 }
+
 .list li:nth-child(odd){
 
   background-color: lightgrey;

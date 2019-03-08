@@ -137,10 +137,11 @@ listUl.addEventListener('click', (event) => {
       let ul = li.parentNode;
       if(li.style.textDecoration == 'line-through'){
         li.style.textDecoration = 'none';
+        li.style.backgroundColor = '';
         ul.insertBefore(li, ul.firstElementChild);
       }else{
         li.style.textDecoration = 'line-through';
-        li.style.backgroundColor = 'lightblue';
+        li.style.backgroundColor = 'lightgreen';
         // taking the item from the top of the list to the bottom of the list
         ul.removeChild(li);
         ul.appendChild(li);
