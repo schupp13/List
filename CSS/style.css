@@ -98,7 +98,7 @@ li button {
     text-align: center;
   }
   h1{
-    font-size: 80%
+    font-size: auto;
   }
   li buttons{
   padding:10px;
